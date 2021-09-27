@@ -1,8 +1,15 @@
+<p align="center">
+<a href="https://hits.seeyoufarm.com"><img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Flmc999%2FRegionRestrictionCheck&count_bg=%230AC995&title_bg=%23004BF9&icon=&icon_color=%23E7E7E7&title=visitors&edge_flat=false"/></a>
+<a href="/LICENSE"><img src="https://img.shields.io/badge/license-GPL-blue.svg" alt="license" /></a>  
+</p>
+
 ## For English user please see
 ### [Introduction](https://github.com/lmc999/RegionRestrictionCheck/blob/main/README_EN.md)
 
 ## 脚本介绍
 本脚本基于[CoiaPrant/MediaUnlock_Test](https://github.com/CoiaPrant/MediaUnlock_Test)代码进行修改
+
+**支持OS/Platform：CentOS 6+, Ubuntu 14.04+, Debian 8+, MacOS, Android with Termux**
 
 + 优化了Disneyplus的判断准确性
 
@@ -78,6 +85,26 @@
 
 + 新增Radiko解锁及区域判断
 
++ 新增CatchPlay+解锁判断
+
++ 新增Hotstar解锁判断
+
++ 新增Litv解锁判断
+
++ 新增Fubo TV解锁判断
+
++ 新增Fox解锁判断
+
++ 新增Joyn解锁判断
+
++ 新增Sky Germany解锁判断
+
++ 新增ZDF解锁判断
+
++ 新增HBO GO Asia解锁判断
+
++ 新增HBO GO Europe解锁判断
+
 ## 使用方法
 
 **使用脚本前请确认curl已安装**
@@ -86,9 +113,29 @@
 bash <(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh)
 ````
 
-**或者直接运行以下Docker命令**
+##### 只检测IPv4结果：
+````bash
+bash <(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh) -M 4
+````
+
+##### 只检测IPv6结果：
+````bash
+bash <(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh) -M 6
+````
+
+##### 指定检测的网卡名称：
+````bash
+bash <(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh) -I eth0
+````
+
+##### 选择脚本语言为英文：
+````bash
+bash <(curl -L -s https://raw.githubusercontent.com/lmc999/RegionRestrictionCheck/main/check.sh) -L e
+````
+
+**或者直接运行以下Docker命令** (兼容ARM架构)
 ````docker
-docker run --rm --net=host lmc999/regioncheck
+docker run --rm -ti --net=host lmc999/regioncheck && docker rmi lmc999/regioncheck
 ````
 
 
@@ -98,4 +145,6 @@ docker run --rm --net=host lmc999/regioncheck
 你亦可直接添加[TG群组](https://t.me/gameaccelerate)分享你的建议
 
 ## 特别鸣谢
-特别鸣谢[柠檬大佬](https://t.me/ilemonrain),目前市面的流媒体解锁检测脚本都是从[Lemonbench](https://github.com/LemonBench/LemonBench)演化而来
+[柠檬大佬](https://t.me/ilemonrain),目前市面的流媒体解锁检测脚本都是从[Lemonbench](https://github.com/LemonBench/LemonBench)演化而来
+
+[onoc1yn](https://github.com/onoc1yn) 提供多架构docker解决方案及Hulu Cookies加密方案
